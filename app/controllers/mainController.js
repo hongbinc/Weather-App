@@ -1,4 +1,4 @@
-'use strick';
+'use strict';
 
 angular.module('myApp')
     .controller('mainController',function($scope, $log, weatherDataService){
@@ -8,13 +8,15 @@ angular.module('myApp')
         var onSearchComplete = function(data){
             if(data.query.results){
                 console.log(data.query.results);
-            }else{
-                alert("Please Search By Zip Code or City.");
+                $scope.weatherData = data.query.results;
             }
             // else{
-            //     // Yahoo API sometimes return null, so keep calling until success.
-            //     $scope.search($scope.zipCode);
+            //     alert("Please Search By Zip Code or City.");
             // }
+            else{
+                // Yahoo API sometimes return null, so keep calling until success.
+                $scope.search($scope.zipCode);
+            }
         };
 
         var onError = function(data){

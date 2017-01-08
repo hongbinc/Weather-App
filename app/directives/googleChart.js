@@ -1,14 +1,10 @@
 'use strict';
 
 angular.module('myApp')
-    .directive('googleChart', function($scope, mainController){
+    .directive('googleChart', function(){
         return {
             restrict: 'E',
-            scope: {weatherData: '='},
-            template: '<div>{{weatherData}}</div>',
-            controller: function($scopt) {
-                
-            }
+            template: '<div>Hey</div>'
         }
         
 });
