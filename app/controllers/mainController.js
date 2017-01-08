@@ -6,7 +6,7 @@ angular.module('myApp')
         $scope.message;
 
         $scope.search = function () {
-            console.log(1);
+            console.log($scope.zipCode);
         }
 
 });
