@@ -1,4 +1,4 @@
-'use strick';
+'use strict';
 
 angular.module('myApp')
     .factory('weatherDataService',function($http){
