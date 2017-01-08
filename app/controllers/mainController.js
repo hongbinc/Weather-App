@@ -1,14 +1,15 @@
 'use strict';
 
 angular.module('myApp')
-    .controller('mainController',function($scope, $log, weatherDataService){
+    .controller('mainController',function($scope, $log, weatherDataService, sharedWeatherData){
         $scope.zipCode = "10001";
 
 
         var onSearchComplete = function(data){
             if(data.query.results){
-                console.log(data.query.results);
-                $scope.weatherData = data.query.results;
+                // console.log(data.query.results);
+                sharedWeatherData.setWeatherData(data.query.results.channel);
+                console.log(sharedWeatherData.getWeatherData());
             }
             // else{
             //     alert("Please Search By Zip Code or City.");

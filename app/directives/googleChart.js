@@ -15,8 +15,12 @@ angular.module('myApp')
 });
 
 angular.module('myApp')
-    .controller('googleChartController',function($scope){
-        console.log($scope.weatherdata);
+    .controller('googleChartController',function($scope, sharedWeatherData){
+
+        var weatherData = sharedWeatherData.getWeatherData();
+        console.log(11111);
+        console.log(sharedWeatherData.getWeatherData());
+        console.log(11111);
 
         $scope.myChartObject = {};
         $scope.myChartObject.type = "Gauge";
@@ -33,11 +37,15 @@ angular.module('myApp')
 
         $scope.myChartObject.data = [
             ['Label', 'Value'],
-            ['Memory', $scope.weatherdata],
+            ['Memory', $scope.weatherData],
             ['CPU', 55],
             ['Network', 68]
         ];
         
+        console.log(sharedWeatherData.getWeatherData());
+        console.log(sharedWeatherData.getWeatherData());
+
+
 });
 
 
