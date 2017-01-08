@@ -7,11 +7,11 @@ angular
   ])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/main', {
         templateUrl: 'main.html',
         controller: 'mainController'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/main'
       });
   }]);
