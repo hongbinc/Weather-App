@@ -2,5 +2,11 @@
 
 angular.module('myApp')
     .controller('mainController',function($scope){
-        $scope.message = "Hey angular";
+        $scope.zipCode = "10001";
+        $scope.message;
+
+        $scope.search = function () {
+            console.log(1);
+        }
+
 });

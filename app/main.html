@@ -1,3 +1,6 @@
-<div>
-    {{message}}
+<div class="searchBar">
+    <form ng-submit="search()">
+        <input type="search" placeholder="Search by Zipcode" ng-model="zipCode"/>
+        <input type="submit" value="search">
+    </form>
 </div>
