@@ -3,7 +3,8 @@
 // Main module of the weather application
 angular
   .module('myApp', [
-    'ngRoute'
+    'ngRoute',
+    'googlechart'
   ])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
