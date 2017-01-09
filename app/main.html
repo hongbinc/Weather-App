@@ -15,5 +15,10 @@
 <div>todayHigh: {{currentWeather.todayHighTemp}}</div>
 <div>todayLow: {{currentWeather.todayLowTemp}}</div>
 
+<div ng-if="currentWeather">
+    <div ng-repeat="(key, value) in currentWeather.additionalData">
+        <div>{{key}}: {{value}} </div>
+    </div>
+</div>
 
 <google-chart weatherdata="weatherData"></google-chart>

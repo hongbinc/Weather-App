@@ -12,8 +12,31 @@ angular.module('myApp')
             setLocation(data);
             setCurrentDescription(data);
             setTemp(data);
+            setAdditionalData(data);
+
+            console.log($scope.currentWeather);
         }
 
+    //     Wind Speed
+    // + Humidity
+    // + Pressure
+    // + Sunrise/Sunset Time
+
+        function setAdditionalData(data){
+            $scope.currentWeather.additionalData = {};
+
+            var windSpeed = data.wind.Speed;
+            var humidity = data.atmosphere.humidity;
+            var pressure = data.atmosphere.pressure;
+            var sunrise = data.astronomy.sunrise;
+            var sunset = data.astronomy.sunset;
+
+            $scope.currentWeather.additionalData.WindSpeed = windSpeed;
+            $scope.currentWeather.additionalData.Humidity = humidity;
+            $scope.currentWeather.additionalData.Pressure = pressure;
+            $scope.currentWeather.additionalData.Sunrise = sunrise;
+            $scope.currentWeather.additionalData.Sunset = sunset;
+        }
 
         function setTemp(data){
             var currentTemp = data.item.condition.temp;
