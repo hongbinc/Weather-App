@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp')
-    .service('sharedWeatherData', function(){
+    .factory('sharedWeatherData', function(){
         var weatherData;
 
         var setWeatherData = function(data){
