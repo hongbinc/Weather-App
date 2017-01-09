@@ -6,19 +6,13 @@ angular.module('myApp')
 
 
         var onSearchComplete = function(data){
-            // if(data.query.results){
-            //     // console.log(data.query.results);
-            //     sharedWeatherData.setWeatherData(data.query.results.channel);
-            //    // console.log(sharedWeatherData.getWeatherData());
-            // }
-            // // else{
-            // //     alert("Please Search By Zip Code or City.");
-            // // }
-            // else{
-            //     // Yahoo API sometimes return null, so keep calling until success.
-            //     $scope.search($scope.zipCode);
-            // }
-            sharedWeatherData.setWeatherData(data.query.results.channel);
+            if(data.query.results){
+                sharedWeatherData.setWeatherData(data.query.results.channel);
+            }
+            else{
+                // Yahoo API sometimes return null, so keep calling until success.
+                $scope.search($scope.zipCode);
+            }
         };
 
         var onError = function(data){
