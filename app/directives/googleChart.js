@@ -8,7 +8,7 @@ angular.module('myApp')
                 weatherdata: '='
             },
          //   template: '<div>{{weatherdata.channel.description}}</div>',
-            template: '<div google-chart chart="myChartObject" style="height:250px; width:100%;"></div>',
+            template: '<div google-chart chart="myChartObject" style="height:250px; width:90%;"></div>',
             controller: 'googleChartController'
         }
         
@@ -17,133 +17,43 @@ angular.module('myApp')
 angular.module('myApp')
     .controller('googleChartController',function($scope, sharedWeatherData){
 
-        var weatherData = sharedWeatherData.getWeatherData();
+        this.weatherData = sharedWeatherData.getWeatherData();
         console.log(11111);
-        console.log(sharedWeatherData.getWeatherData());
+        console.log(this.weatherData);
         console.log(11111);
 
-        $scope.myChartObject = {
+        this.obj = {
             "type": "LineChart",
             "displayed": false,
             "data": {
-                "cols": [
-                {
-                    "id": "month",
-                    "label": "Month",
-                    "type": "string",
-                    "p": {}
-                },
-                {
-                    "id": "laptop-id",
-                    "label": "Laptop",
-                    "type": "number",
-                    "p": {}
-                },
-                {
-                    "id": "desktop-id",
-                    "label": "Desktop",
-                    "type": "number",
-                    "p": {}
-                },
-                {
-                    "id": "server-id",
-                    "label": "Server",
-                    "type": "number",
-                    "p": {}
-                },
-                {
-                    "id": "cost-id",
-                    "label": "Shipping",
-                    "type": "number"
-                },
-                {
-                    "id": "",
-                    "role": "tooltip",
-                    "type": "string",
-                    "p": {
-                    "role": "tooltip",
-                    "html": true
-                    }
-                }
-                ],
-                "rows": [
-                {
-                    "c": [
-                    {
-                        "v": "January"
-                    },
-                    {
-                        "v": 19,
-                        "f": "42 items"
-                    },
-                    {
-                        "v": 12,
-                        "f": "Ony 12 items"
-                    },
-                    {
-                        "v": 7,
-                        "f": "7 servers"
-                    },
-                    {
-                        "v": 4
-                    },
-                    {
-                        "v": " <b>Shipping 4</b><br /><img src=\"http://icons.iconarchive.com/icons/antrepo/container-4-cargo-vans/512/Google-Shipping-Box-icon.png\" style=\"height:85px\" />",
-                        "p": {}
-                    }
+                "cols": [{
+                            "label": "Day",
+                            "type": "string"
+                        },
+                        {
+                            "label": "Partly Cloudy",
+                            "type": "number"
+                        },
+                        {
+                            "label": "Low Temp",
+                            "type": "number"
+                        }
+                    ],
+                    "rows": [
+                        {
+                            "c": [{"v": "January"},{"v": 19, "f": "↑ Higt 42, ↓ Low 12"},{"v": 12, "f": "Ony 12 items"}]
+                        },
+                        {
+                            "c": [{"v": "February"},{"v": 13},{"v": 1}]
+                        },
+                        {
+                            "c": [{"v": "March"}, {"v": 24},{"v": 5}]
+                        }
                     ]
-                },
-                {
-                    "c": [
-                    {
-                        "v": "February"
-                    },
-                    {
-                        "v": 13
-                    },
-                    {
-                        "v": 1,
-                        "f": "1 unit (Out of stock this month)"
-                    },
-                    {
-                        "v": 12
-                    },
-                    {
-                        "v": 2
-                    },
-                    {
-                        "v": " <b>Shipping 2</b><br /><img src=\"http://icons.iconarchive.com/icons/antrepo/container-4-cargo-vans/512/Google-Shipping-Box-icon.png\" style=\"height:85px\" />",
-                        "p": {}
-                    }
-                    ]
-                },
-                {
-                    "c": [
-                    {
-                        "v": "March"
-                    },
-                    {
-                        "v": 24
-                    },
-                    {
-                        "v": 5
-                    },
-                    {
-                        "v": 11
-                    },
-                    {
-                        "v": 6
-                    },
-                    {
-                        "v": " <b>Shipping 6</b><br /><img src=\"http://icons.iconarchive.com/icons/antrepo/container-4-cargo-vans/512/Google-Shipping-Box-icon.png\" style=\"height:85px\" />",
-                        "p": {}
-                    }
-                    ]
-                }
-                ]
             },
             "options": {
                 "title": "7 Days Forecast",
+                "colors": ["red","blue"],
                 "isStacked": "true",
                 "fill": 20,
                 "displayExactValues": true,
@@ -163,6 +73,63 @@ angular.module('myApp')
             "formatters": {},
             "view": {}
         }
+
+        this.obj["data"]["cols"][1].
+
+        $scope.myChartObject = this.obj;
+
+
+        // $scope.myChartObject = {
+        //     "type": "LineChart",
+        //     "displayed": false,
+        //     "data": {
+        //         "cols": [{
+        //                     "label": "Day",
+        //                     "type": "string"
+        //                 },
+        //                 {
+        //                     "label": "Partly Cloudy",
+        //                     "type": "number"
+        //                 },
+        //                 {
+        //                     "label": "Low Temp",
+        //                     "type": "number"
+        //                 }
+        //             ],
+        //             "rows": [
+        //                 {
+        //                     "c": [{"v": "January"},{"v": 19, "f": "↑ Higt 42, ↓ Low 12"},{"v": 12, "f": "Ony 12 items"}]
+        //                 },
+        //                 {
+        //                     "c": [{"v": "February"},{"v": 13},{"v": 1}]
+        //                 },
+        //                 {
+        //                     "c": [{"v": "March"}, {"v": 24},{"v": 5}]
+        //                 }
+        //             ]
+        //     },
+        //     "options": {
+        //         "title": "7 Days Forecast",
+        //         "colors": ["red","blue"],
+        //         "isStacked": "true",
+        //         "fill": 20,
+        //         "displayExactValues": true,
+        //         "vAxis": {
+        //             "title": "Temperature °F",
+        //             "gridlines": {
+        //                 "count": 10
+        //             }
+        //         },
+        //         "hAxis": {
+        //             "title": "Date"
+        //         },
+        //         "tooltip": {
+        //             "isHtml": true
+        //         }
+        //     },
+        //     "formatters": {},
+        //     "view": {}
+        // }
         
 });
 
