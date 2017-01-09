@@ -143,31 +143,27 @@ angular.module('myApp')
                 ]
             },
             "options": {
-                "title": "Sales per month",
+                "title": "7 Days Forecast",
                 "isStacked": "true",
                 "fill": 20,
                 "displayExactValues": true,
                 "vAxis": {
-                "title": "Sales unit",
-                "gridlines": {
-                    "count": 10
-                }
+                    "title": "Temperature °F",
+                    "gridlines": {
+                        "count": 10
+                    }
                 },
                 "hAxis": {
-                "title": "Date"
+                    "title": "Date"
                 },
                 "tooltip": {
-                "isHtml": true
+                    "isHtml": true
                 }
             },
             "formatters": {},
             "view": {}
-            }
+        }
         
-        console.log(sharedWeatherData.getWeatherData());
-        console.log(sharedWeatherData.getWeatherData());
-
-
 });
 
 
