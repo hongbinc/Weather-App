@@ -26,9 +26,9 @@ angular.module('myApp')
             var sunrise = data.astronomy.sunrise;
             var sunset = data.astronomy.sunset;
 
-            $scope.currentWeather.additionalData.WindSpeed = windSpeed;
-            $scope.currentWeather.additionalData.Humidity = humidity;
-            $scope.currentWeather.additionalData.Pressure = pressure;
+            $scope.currentWeather.additionalData.WindSpeed = windSpeed + " mph";
+            $scope.currentWeather.additionalData.Humidity = humidity + " %";
+            $scope.currentWeather.additionalData.Pressure = pressure + " in";
             $scope.currentWeather.additionalData.Sunrise = sunrise;
             $scope.currentWeather.additionalData.Sunset = sunset;
         }
