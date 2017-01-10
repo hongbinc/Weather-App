@@ -17,15 +17,10 @@ angular.module('myApp')
             console.log($scope.currentWeather);
         }
 
-    //     Wind Speed
-    // + Humidity
-    // + Pressure
-    // + Sunrise/Sunset Time
-
         function setAdditionalData(data){
             $scope.currentWeather.additionalData = {};
 
-            var windSpeed = data.wind.Speed;
+            var windSpeed = data.wind.speed;
             var humidity = data.atmosphere.humidity;
             var pressure = data.atmosphere.pressure;
             var sunrise = data.astronomy.sunrise;
@@ -43,9 +38,9 @@ angular.module('myApp')
             var todayHighTemp = data.item.forecast[0].high;
             var todayLowTemp = data.item.forecast[0].low;
             
-            $scope.currentWeather.currentTemp = currentTemp;
-            $scope.currentWeather.todayHighTemp = todayHighTemp;
-            $scope.currentWeather.todayLowTemp = todayLowTemp;
+            $scope.currentWeather.currentTemp = currentTemp + "°";
+            $scope.currentWeather.todayHighTemp = todayHighTemp + "°";
+            $scope.currentWeather.todayLowTemp = todayLowTemp + "°";
         }
 
         function setCurrentDescription(data){
@@ -77,6 +72,13 @@ angular.module('myApp')
         var onError = function(data){
             $scope.error = "No data found.";
         };
+
+        $scope.showMoreDetails = false;
+        $scope.toggleText = "Details +";
+        
+        $scope.toggleAdditionalData = function(){
+            $scope.showMoreDetails = !$scope.showMoreDetails;
+        }
 
         $scope.search = function (zipCode) {
             $log.info("Searching weather for " + zipCode);

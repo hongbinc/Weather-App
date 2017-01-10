@@ -6,7 +6,7 @@ angular.module('myApp')
 
         return {
             restrict: 'E',
-             template: '<div google-chart chart="myChartObject" style="height:250px; width:90%;"></div>',
+             template: '<div google-chart chart="myChartObject" style="height:350px; width:100%;"></div>',
              controller: 'googleChartController',
              controllerAs: 'vm',
              transclude : true
@@ -39,9 +39,9 @@ angular.module('myApp')
                     ],  
                     // Seven days forecast data module, will be replace when prepareData() get called.
                     "rows": [
-                        {
-                            "c": [{"v": ""},{"v": 19, "f": ""},{"v": 12, "f": ""}]
-                        }
+                        // {
+                        //     "c": [{"v": ""},{"v": 19, "f": ""},{"v": 12, "f": ""}]
+                        // }
                     ]
             },
             "options": {

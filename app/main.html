@@ -1,24 +1,31 @@
 <div class="searchBar">
     <form ng-submit="search(zipCode)">
         <input type="search" placeholder="Search by Zipcode" ng-model="zipCode" required/>
-        <input type="submit" value="search">
+        <!--<input type="submit" value="search">-->
+        <button class="searchButton" type="submit">Search</button>
     </form>
 </div>
 
 
-<div>{{currentWeather.location}}</div> 
-
-<div>{{currentWeather.currentDescription}}</div>
-
-<div>current: {{currentWeather.currentTemp}}</div>
+<div class="location">{{currentWeather.location}}</div> 
 
 <div>todayHigh: {{currentWeather.todayHighTemp}}</div>
 <div>todayLow: {{currentWeather.todayLowTemp}}</div>
 
-<div ng-if="currentWeather">
-    <div ng-repeat="(key, value) in currentWeather.additionalData">
-        <div>{{key}}: {{value}} </div>
+<div ng-if="currentWeather" class="currentWeather">
+    <div class="currentDescription">{{currentWeather.currentDescription}}</div>
+    <div class="currentTemp">{{currentWeather.currentTemp}}</div>
+
+    <div class="moreDetails" ng-if="currentWeather.additionalData && !showMoreDetails" ng-click="toggleAdditionalData()">{{toggleText}}</div>
+    <div class="moreDetails" ng-if="showMoreDetails" ng-click="toggleAdditionalData()">Details -</div>
+
+    <div class="additionalData" ng-if="currentWeather.additionalData && showMoreDetails">
+        <div ng-repeat="(key, value) in currentWeather.additionalData">
+            <div>{{key}}: {{value}} </div>
+        </div>
     </div>
+
 </div>
+
 
 <google-chart weatherdata="weatherData"></google-chart>

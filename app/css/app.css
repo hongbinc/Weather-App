@@ -1,2 +1,79 @@
 /* app css stylesheet */
 
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400');
+html{
+  height: 100%;
+  /*overflow: hidden;*/
+}
+body {
+    margin: 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    height: 100%;
+}
+.main{
+    height: 100%;
+}
+
+input{
+    width: 205px;
+}
+.searchButton{
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    border: 1px solid #5D7FA2;
+    min-width: 90px;
+    text-transform: uppercase;
+    background: #5D7FA2;
+    margin-left: -5px;
+}
+
+.location{
+    font-weight: 300;
+    text-align: center;
+    color:#000000;
+    font-size: 40px;
+}
+
+.searchBar{
+    position: relative;
+    display: inline-block;
+    margin-top: 16px;
+    margin-left: 10px;
+}
+
+.currentDescription{
+    position: absolute;
+    display: inline-block;
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+.currentTemp{
+    position: relative;
+    display: inline-block;
+    font-size: 170px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.moreDetails{
+    cursor: pointer;
+    color: #5D7FA2;
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+}
+.moreDetails:hover{
+    color: #E91E63;
+    font-weight: bold;
+}
+
+.additionalData{
+    position: absolute;
+    display: inline-block;
+    margin-left: 10.5%;
+    margin-top: 79px;
+    font-size: 18px;
+}
