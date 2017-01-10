@@ -83,7 +83,7 @@
                     var lowTempTooltip = "↓ " + lowTemp + "°F" + ", High ↑: " + highTemp + "°F" + ", "+ weatherDescription;
 
                     var dayObj = {
-                        "c": [{"v": day},{"v": highTemp, "f": highTempTooltip},{"v": 12, "f": lowTempTooltip}]
+                        "c": [{"v": day},{"v": highTemp, "f": highTempTooltip},{"v": lowTemp, "f": lowTempTooltip}]
                     };
 
                     dataRows.push(dayObj);
