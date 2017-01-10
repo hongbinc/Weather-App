@@ -74,7 +74,6 @@ angular.module('myApp')
         };
 
         $scope.showMoreDetails = false;
-        $scope.toggleText = "Details +";
         
         $scope.toggleAdditionalData = function(){
             $scope.showMoreDetails = !$scope.showMoreDetails;

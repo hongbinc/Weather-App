@@ -9,14 +9,17 @@
 
 <div class="location">{{currentWeather.location}}</div> 
 
-<div>todayHigh: {{currentWeather.todayHighTemp}}</div>
-<div>todayLow: {{currentWeather.todayLowTemp}}</div>
-
 <div ng-if="currentWeather" class="currentWeather">
-    <div class="currentDescription">{{currentWeather.currentDescription}}</div>
+    <div class="currentDescription">
+        <span>{{currentWeather.currentDescription}}</span>
+        <div class="highAndLowTemp" ng-if="currentWeather.todayHighTemp">
+            <span>↑ High: {{currentWeather.todayHighTemp}}</span>
+            <span class="lowTemp">↓ Low: {{currentWeather.todayLowTemp}}</span>
+        </div>
+    </div>
     <div class="currentTemp">{{currentWeather.currentTemp}}</div>
 
-    <div class="moreDetails" ng-if="currentWeather.additionalData && !showMoreDetails" ng-click="toggleAdditionalData()">{{toggleText}}</div>
+    <div class="moreDetails" ng-if="currentWeather.additionalData && !showMoreDetails" ng-click="toggleAdditionalData()">Details +</div>
     <div class="moreDetails" ng-if="showMoreDetails" ng-click="toggleAdditionalData()">Details -</div>
 
     <div class="additionalData" ng-if="currentWeather.additionalData && showMoreDetails">
