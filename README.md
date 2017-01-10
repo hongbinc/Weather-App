@@ -12,7 +12,7 @@ Note: This project requires node and npm. Instuctions for installing them can be
 4. run the command: `npm start`
 
 #### P.S (Yahoo Weather API Bug)
-Note: Yahoo Weather API itself has an bug, sometimes it returns result = null. So I make the app repeatedly call the API until it return a result.(That's way sometimes it takes longer to load the website).
+Note: Yahoo Weather API itself has an bug, sometimes it returns result = null. So I make the app repeatedly call the API until it return a result.(That's why sometimes it takes longer to load the website).
 
 #### Remaining work (in order of priority)
 1. Setup unit tests using Jasmine and Karma.
