@@ -9,7 +9,7 @@
     .config(['$routeProvider', function($routeProvider) {
       $routeProvider
         .when('/main', {
-          templateUrl: 'main.html',
+          templateUrl: 'app/main.html',
           controller: 'mainController'
         })
         .otherwise({
