@@ -1,6 +1,10 @@
 # Weather-App
 This is a front-end AngularJS app for check weather by zip code or city name, completed as a code challenge for Emogi.
 
+Available live here: https://hongbinc.github.io/Weather-App 
+
+`(Due to a Yahoo weather API bug, if the website load slowly, please wait 3-5 seconds or refresh the page)`
+
 Currently still a work in progress. As I make continued improvements, I'll update this README.
 
 ### To run and develop locally:
