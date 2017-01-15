@@ -19,7 +19,7 @@ Note: This project requires node and npm. Instuctions for installing them can be
 Note: Yahoo Weather API itself has an bug, sometimes it returns result = null. So I make the app repeatedly call the API until it return a result.(That's why sometimes it takes longer to load the website).
 
 #### Remaining work (in order of priority)
-1.  ~~Report Yahoo Weather API bug to Yahoo. ~~
+1.  <del>Report Yahoo Weather API bug to Yahoo.</del>
 2. Setup unit tests using Jasmine and Karma.
 3. Create a validation service to check input. OR Create a auto complete for zipcode/cityname search bar. 
 4. Perform Less or Sass compilation into CSS, so that styling can be done in a pre-processing language.
